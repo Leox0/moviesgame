@@ -2,6 +2,8 @@ package com.kaczart.moviesweb.user.service;
 
 import com.kaczart.moviesweb.user.entitiy.UserEntity;
 import com.kaczart.moviesweb.user.entitiy.UserRoleEntity;
+import com.kaczart.moviesweb.user.exceptions.ExceptionReason;
+import com.kaczart.moviesweb.user.exceptions.UserException;
 import com.kaczart.moviesweb.user.model.RequestUser;
 import com.kaczart.moviesweb.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,35 +22,39 @@ public class UserService {
     private final UserRoleService userRoleService;
     private final PasswordEncoder passwordEncoder;
 
-    public String createUser(RequestUser requestUser) throws Exception {
+    public String createUser(RequestUser requestUser) {
         UserEntity userEntity = createAccount(requestUser, false);
         return String.format(ACCOUNT_CREATION_OUTPUT, userEntity.getUsername());
     }
 
-    public String createAdmin(RequestUser requestUser) throws Exception {
+    public String createAdmin(RequestUser requestUser) {
         UserEntity userEntity = createAccount(requestUser, true);
         return String.format(ACCOUNT_CREATION_OUTPUT, userEntity.getUsername());
     }
 
-    private UserEntity createAccount(RequestUser requestUser, boolean b) throws Exception {
+    private UserEntity createAccount(RequestUser requestUser, boolean b) {
         UserEntity userEntity = buildUserEntity(requestUser, b);
         repo.save(userEntity);
         return userEntity;
     }
 
-    private UserEntity buildUserEntity(RequestUser requestUser, boolean isAdmin) throws Exception {
+    private UserEntity buildUserEntity(RequestUser requestUser, boolean isAdmin) throws UserException {
         UserRoleEntity userRole = ((isAdmin) ? userRoleService.getAdminAuthority() : userRoleService.getUserAuthority());
         if (!isUsernameUsed(requestUser.getUsername())) {
-            return UserEntity.builder()
-                    .username(requestUser.getUsername())
-                    .password(passwordEncoder.encode(requestUser.getPassword()))
-                    .roles(Set.of(userRole))
-                    .enabled(isAdmin)
-                    .points(0)
-                    .build();
+            return buildUserEntity(requestUser, isAdmin, userRole);
         } else {
-            throw new Exception();
+            throw new UserException(ExceptionReason.USER_ALREADY_EXISTS);
         }
+    }
+
+    protected UserEntity buildUserEntity(RequestUser requestUser, boolean isAdmin, UserRoleEntity userRole) {
+        return UserEntity.builder()
+                .username(requestUser.getUsername())
+                .password(passwordEncoder.encode(requestUser.getPassword()))
+                .roles(Set.of(userRole))
+                .enabled(isAdmin)
+                .points(0)
+                .build();
     }
 
     private boolean isUsernameUsed(String username) {

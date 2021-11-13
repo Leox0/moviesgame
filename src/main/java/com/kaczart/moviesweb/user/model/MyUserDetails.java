@@ -2,6 +2,7 @@ package com.kaczart.moviesweb.user.model;
 
 import com.kaczart.moviesweb.user.entitiy.UserEntity;
 import com.kaczart.moviesweb.user.entitiy.UserRoleEntity;
+import lombok.EqualsAndHashCode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
+@EqualsAndHashCode
 public class MyUserDetails implements UserDetails {
 
     private UserEntity user;
