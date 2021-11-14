@@ -1,6 +1,8 @@
 package com.kaczart.moviesweb.configuration;
 
+import com.kaczart.moviesweb.user.repository.UserRepository;
 import com.kaczart.moviesweb.user.service.UserDetailsServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -14,6 +16,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    UserRepository userRepository;
+
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return new UserDetailsServiceImpl(userRepository);
+    }
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
