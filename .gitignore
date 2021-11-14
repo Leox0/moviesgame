@@ -37,4 +37,5 @@ out/
 .vscode/
 
 ### local ###
-application-local.properties
+application-localh2.properties
+application-localpsql.properties
