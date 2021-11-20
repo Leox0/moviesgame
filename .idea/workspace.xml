@@ -5,53 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0291eb7e-b3ac-4d04-8e0d-73f180908617" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.jpb/persistence-units.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/MovieswebApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/configuration/RestTemplateConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/configuration/SpringFoxConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/configuration/WebSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/mock/controller/MockController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/movies/controller/GlobalControllerAdvice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/movies/controller/MovieController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/movies/entity/MovieEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/movies/exceptions/MovieException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/movies/model/Movie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/movies/repository/MovieRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/movies/service/MovieService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/movies/service/provider/ImdbProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/movies/service/provider/MovieProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/bootstrap/UserResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/entitiy/UserEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/entitiy/UserRoleEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/exceptions/ExceptionReason.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/exceptions/UserException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/model/MyUserDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/model/RequestUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/model/ResponseUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/repository/UserRoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/service/UserDetailsServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/service/UserRoleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaczart/moviesweb/user/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/kaczart/moviesweb/MovieswebApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/kaczart/moviesweb/movies/service/MovieServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/kaczart/moviesweb/movies/service/MovieServiceTestUnit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/kaczart/moviesweb/user/controller/UserControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/kaczart/moviesweb/user/service/UserDetailsServiceImplTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/kaczart/moviesweb/user/service/UserServiceIntegrationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/kaczart/moviesweb/user/service/UserServiceUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/application-test.properties" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/resources/main/application-localh2.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/resources/main/application-localpsql.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +26,9 @@
     <system id="GRADLE">
       <state>
         <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/moviesweb">
           <activation />
         </task>
         <projects_view>
@@ -109,7 +68,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="008-database-configuration" />
+        <entry key="$PROJECT_DIR$" value="020_randomFilms" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -130,6 +89,18 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Structure" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -146,11 +117,12 @@
     <property name="TF_FMT" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/moviesweb/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PCz\IdeaProjects\sping6ProjektKoncowy\moviesgame" />
       <recent name="C:\repos_learning\sda\moviesweb-clone\New folder\moviesweb\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -481,14 +453,14 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/moviesweb$MovieswebApplication.ic" NAME="MovieswebApplication Coverage Results" MODIFIED="1635689734495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.kaczart.moviesweb.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/moviesweb$MovieswebApplicationTests.ic" NAME="MovieswebApplicationTests Coverage Results" MODIFIED="1636895183290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/moviesweb$UserServiceUnitTest.ic" NAME="UserServiceUnitTest Coverage Results" MODIFIED="1636812801043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/moviesweb$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1635703129815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/moviesweb$UserControllerTest_shouldCreateNormalUser.ic" NAME="UserControllerTest.shouldCreateNormalUser Coverage Results" MODIFIED="1635703233401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/moviesweb$UserDetailsServiceImplTest.ic" NAME="UserDetailsServiceImplTest Coverage Results" MODIFIED="1636813501201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/moviesweb$UserServiceIntegrationTest.ic" NAME="UserServiceIntegrationTest Coverage Results" MODIFIED="1636812858065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/moviesweb$MovieswebApplication.ic" NAME="MovieswebApplication Coverage Results" MODIFIED="1635689734495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.kaczart.moviesweb.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/moviesweb$UserDetailsServiceImplTest.ic" NAME="UserDetailsServiceImplTest Coverage Results" MODIFIED="1636813501201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/moviesweb$UserControllerTest_shouldCreateNormalUser.ic" NAME="UserControllerTest.shouldCreateNormalUser Coverage Results" MODIFIED="1635703233401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
