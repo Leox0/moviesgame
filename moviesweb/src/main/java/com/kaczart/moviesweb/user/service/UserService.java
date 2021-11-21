@@ -5,6 +5,7 @@ import com.kaczart.moviesweb.user.entitiy.UserRoleEntity;
 import com.kaczart.moviesweb.user.exceptions.ExceptionReason;
 import com.kaczart.moviesweb.user.exceptions.UserException;
 import com.kaczart.moviesweb.user.model.RequestUser;
+import com.kaczart.moviesweb.user.model.ResponseUser;
 import com.kaczart.moviesweb.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,19 +24,29 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
 
     public String createUser(RequestUser requestUser) {
-        UserEntity userEntity = createAccount(requestUser, false);
-        return String.format(ACCOUNT_CREATION_OUTPUT, userEntity.getUsername());
+        return createAccount(requestUser, false);
     }
 
     public String createAdmin(RequestUser requestUser) {
-        UserEntity userEntity = createAccount(requestUser, true);
-        return String.format(ACCOUNT_CREATION_OUTPUT, userEntity.getUsername());
+        return createAccount(requestUser, true);
     }
 
-    private UserEntity createAccount(RequestUser requestUser, boolean b) {
+    public ResponseUser getUserByName(String name){
+        UserEntity userEntity = repo.getUserByUsername(name);
+        return buildResponseUser(userEntity);
+    }
+
+    public ResponseUser addPoints(ResponseUser user, int points) {
+        UserEntity userEntity = repo.getUserByUsername(user.getUsername());
+        userEntity.setPoints(userEntity.getPoints() + points);
+        repo.save(userEntity);
+        return buildResponseUser(userEntity);
+    }
+
+    private String createAccount(RequestUser requestUser, boolean b) {
         UserEntity userEntity = buildUserEntity(requestUser, b);
         repo.save(userEntity);
-        return userEntity;
+        return String.format(ACCOUNT_CREATION_OUTPUT, userEntity.getUsername());
     }
 
     private UserEntity buildUserEntity(RequestUser requestUser, boolean isAdmin) throws UserException {
@@ -59,5 +70,9 @@ public class UserService {
 
     private boolean isUsernameUsed(String username) {
         return repo.existsByUsername(username);
+    }
+
+    public ResponseUser buildResponseUser(UserEntity user) {
+        return new ResponseUser(user.getUsername(), user.getPoints());
     }
 }

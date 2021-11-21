@@ -4,7 +4,8 @@ import lombok.Getter;
 
 @Getter
 public enum ExceptionReason {
-    USER_ALREADY_EXISTS("This user already exists");
+    USER_ALREADY_EXISTS("This user already exists"),
+    USER_DOSNT_EXISTS("This user doesnt exist");
 
     private String messageTemplate;
 
