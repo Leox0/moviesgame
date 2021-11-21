@@ -1,5 +1,6 @@
 package com.kaczart.moviesweb.movies.service;
 
+import com.kaczart.moviesweb.movies.bootstrap.MovieResolver;
 import com.kaczart.moviesweb.movies.entity.MovieEntity;
 import com.kaczart.moviesweb.movies.exceptions.MovieException;
 import com.kaczart.moviesweb.movies.model.Movie;
@@ -28,6 +29,9 @@ public class MovieServiceTest {
     @MockBean
     MovieProvider mockMovieProvider;
 
+    @MockBean
+    MovieResolver movieResolver;
+
     @Test
     public void shouldSaveMovieToDB() throws MovieException {
         //given
@@ -39,7 +43,6 @@ public class MovieServiceTest {
         Mockito.when(mockMovieProvider.getMovies()).thenReturn(moviesExpected);
 
         //when
-        System.out.println("Test");
         movieService.saveMovies();
 
         //then

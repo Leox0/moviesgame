@@ -5,9 +5,9 @@ import com.kaczart.moviesweb.movies.exceptions.MovieException;
 import com.kaczart.moviesweb.movies.model.Movie;
 import com.kaczart.moviesweb.movies.repository.MovieRepository;
 import com.kaczart.moviesweb.movies.service.provider.MovieProvider;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -20,7 +20,7 @@ public class MovieService {
     private MovieProvider movieProvider;
     private MovieRepository movieRepository;
 
-    public MovieService(MovieProvider movieProvider, MovieRepository movieRepository) {
+    public MovieService(@Qualifier("exampleDataProvider") MovieProvider movieProvider, MovieRepository movieRepository) {
         this.movieProvider = movieProvider;
         this.movieRepository = movieRepository;
     }
@@ -49,7 +49,7 @@ public class MovieService {
 
     private List<Movie> getMoviesFromProvider() throws MovieException {
         List<Movie> movies = movieProvider.getMovies();
-        if (movies.size() < 1) {
+        if (movies.isEmpty()) {
             throw new MovieException(MOVIE_LIST_IS_NOT_CORRECT);
         }
         return movies;
@@ -60,11 +60,11 @@ public class MovieService {
                 .title(movie.getTitle())
                 .year(movie.getYear())
                 .build();
-        try {
-            movieRepository.save(movieEntity);
-        } catch (Exception e) {
+        if (movieRepository.existsByTitle(movie.getTitle())) {
             return Optional.empty();
+        } else {
+            movieRepository.save(movieEntity);
+            return Optional.of(movieEntity.toView());
         }
-        return Optional.of(movieEntity.toView());
     }
 }
