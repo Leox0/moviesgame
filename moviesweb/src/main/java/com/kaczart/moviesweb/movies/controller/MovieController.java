@@ -31,7 +31,7 @@ public class MovieController {
     }
 
     @GetMapping("/title/{title}")
-    public ResponseEntity<Movie> getMovieByTitle (@PathVariable(value = "title") String title) throws MovieException {
+    public ResponseEntity<Movie> getMovieByTitle(@PathVariable(value = "title") String title) throws MovieException {
         Movie movie = movieService.getMovieFromDBByTitle(title);
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -45,8 +45,4 @@ public class MovieController {
                 .status(HttpStatus.OK)
                 .body(movieList);
     }
-
-
-
-
 }

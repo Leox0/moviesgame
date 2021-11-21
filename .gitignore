@@ -1,5 +1,6 @@
 HELP.md
 .gradle
+**/.gradle
 **/build/
 !**/gradle/wrapper/gradle-wrapper.jar
 !**/**/src/main/**/build/
@@ -13,7 +14,7 @@ HELP.md
 .settings
 .springBeans
 .sts4-cache
-**/bin/
+bin/
 !**/**/src/main/**/bin/
 !**/**/src/test/**/bin/
 
@@ -27,11 +28,11 @@ out/
 !**/**/src/test/**/out/
 
 ### NetBeans ###
-/**/nbproject/private/
-/**/nbbuild/
-/**/dist/
-/**/nbdist/
-/**/.nb-gradle/
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 
 ### VS Code ###
 .vscode/
