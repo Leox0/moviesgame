@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@Primary
 public class ExampleDataProvider implements MovieProvider {
     @Override
     public List<Movie> getMovies() {

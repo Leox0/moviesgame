@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kaczart.moviesweb.movies.model.Movie;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -13,6 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
+@Primary
 public class ImdbProvider implements MovieProvider {
 
     private static final String baseUrl = "https://imdb8.p.rapidapi.com/title";
@@ -39,7 +41,7 @@ public class ImdbProvider implements MovieProvider {
         List<String> moviesId = getMoviesIdFromApi();
         List<Movie> movies = new ArrayList<>();
 
-        for (int i = 0; i < 2; i++) { //i<* because imdb licence //ultimately it should be movieIdList.size()
+        for (int i = 0; i < 20; i++) { //i<* because imdb licence //ultimately it should be movieIdList.size()
             String s = moviesId.get(i).substring(7);
             Movie movie = getMovieFromApi(s);
             movies.add(movie);

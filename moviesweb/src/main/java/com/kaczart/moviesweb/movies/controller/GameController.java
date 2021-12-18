@@ -8,8 +8,10 @@ import com.kaczart.moviesweb.user.model.RequestUser;
 import com.kaczart.moviesweb.user.model.ResponseUser;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -26,7 +28,7 @@ public class GameController {
     }
 
     @PostMapping("/createScore")
-    public ResponseEntity<ResponseUser> createScore(@RequestBody ScoreData scoreData) throws MovieException {
+    public ResponseEntity<ResponseUser> createScore(@RequestBody @Valid ScoreData scoreData) {
 
         ResponseUser userScore = gameService.calculateScoreAndSavePoints(scoreData.getMovies(), scoreData.getUserName());
 

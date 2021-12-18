@@ -20,7 +20,7 @@ public class MovieService {
     private MovieProvider movieProvider;
     private MovieRepository movieRepository;
 
-    public MovieService(@Qualifier("exampleDataProvider") MovieProvider movieProvider, MovieRepository movieRepository) {
+    public MovieService(MovieProvider movieProvider, MovieRepository movieRepository) {
         this.movieProvider = movieProvider;
         this.movieRepository = movieRepository;
     }

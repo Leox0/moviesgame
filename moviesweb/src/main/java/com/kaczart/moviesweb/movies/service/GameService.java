@@ -29,8 +29,7 @@ public class GameService {
         return allMovies.subList(0, moviesAmount);
     }
 
-    public ResponseUser calculateScoreAndSavePoints(List<Movie> userMovies, String userName) throws MovieException {
-        assertNotEmptyList(userMovies);
+    public ResponseUser calculateScoreAndSavePoints(List<Movie> userMovies, String userName) {
         ResponseUser user = userService.getUserByName(userName);
         int score = calculateScore(userMovies);
         return userService.addPoints(user, score);
@@ -45,7 +44,7 @@ public class GameService {
         return score;
     }
 
-    private void assertNotEmptyList(List<Movie> userMovies) throws MovieException {
+    private void validateMovies(List<Movie> userMovies) throws MovieException {
         if (userMovies.isEmpty()) {
             throw new MovieException(THE_LIST_PROVIDED_IS_EMPTY);
         }
